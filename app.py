@@ -15,38 +15,10 @@ st.markdown("""
 
 html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
 
-.stApp { background: #0f1117; color: #e8e8e8; }
-
-[data-testid="stSidebar"] {
-    background: #161b27;
-    border-right: 1px solid #2a2f3e;
-}
-[data-testid="stSidebar"] .stMarkdown h3 {
-    color: #7dd3fc; font-size: 0.7rem; font-weight: 600;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    margin-top: 1.4rem; margin-bottom: 0.3rem;
-}
-
-[data-testid="stNumberInput"] input {
-    background: #1e2433 !important; border: 1px solid #2e3548 !important;
-    color: #e8e8e8 !important; border-radius: 6px !important;
-    font-family: 'DM Mono', monospace !important;
-}
-[data-testid="stNumberInput"] input:focus {
-    border-color: #38bdf8 !important;
-    box-shadow: 0 0 0 2px rgba(56,189,248,0.15) !important;
-}
-
-[data-testid="stDataEditor"], [data-testid="stDataFrame"] {
-    border: 1px solid #2e3548 !important;
-    border-radius: 8px !important;
-}
-
 .stButton > button {
     background: #0ea5e9 !important; color: #000 !important;
     border: none !important; font-weight: 600 !important;
-    font-family: 'DM Sans', sans-serif !important;
-    letter-spacing: 0.03em !important; border-radius: 6px !important;
+    border-radius: 6px !important;
     padding: 0.5rem 1.4rem !important; transition: all 0.15s ease !important;
 }
 .stButton > button:hover {
@@ -58,60 +30,39 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     transform: none !important; box-shadow: none !important;
 }
 
-[data-testid="metric-container"] {
-    background: #161b27; border: 1px solid #2a2f3e;
-    border-radius: 10px; padding: 1rem 1.2rem;
-}
-[data-testid="metric-container"] [data-testid="stMetricLabel"] {
-    font-size: 0.72rem; color: #7dd3fc;
-    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;
-}
-[data-testid="metric-container"] [data-testid="stMetricValue"] {
-    font-family: 'DM Mono', monospace; font-size: 1.6rem; color: #f0f9ff;
-}
-
-.stTabs [data-baseweb="tab-list"] {
-    background: transparent; border-bottom: 1px solid #2a2f3e; gap: 0;
-}
 .stTabs [data-baseweb="tab"] {
-    color: #8899aa !important; font-size: 0.82rem !important;
+    font-size: 0.82rem !important;
     font-weight: 500 !important; letter-spacing: 0.04em !important;
     padding: 0.6rem 1.2rem !important;
     border-bottom: 2px solid transparent !important;
 }
 .stTabs [aria-selected="true"] {
-    color: #38bdf8 !important;
-    border-bottom: 2px solid #38bdf8 !important;
+    color: #0ea5e9 !important;
+    border-bottom: 2px solid #0ea5e9 !important;
     background: transparent !important;
 }
 
 .section-label {
     font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
-    color: #7dd3fc;
-    margin-bottom: 0.4rem; margin-top: 1.2rem;
+    color: #0ea5e9;
+    margin-bottom: 0.3rem;
+    margin-top: 1rem;
 }
 .info-box {
-    background: #0c2233; border: 1px solid #1e4a6e;
+    border: 1px solid #38bdf8;
     border-left: 3px solid #38bdf8; border-radius: 6px;
     padding: 0.6rem 1rem; font-size: 0.82rem;
-    color: #bae6fd; margin-bottom: 0.8rem;
+    opacity: 0.9;
 }
 .warn-box {
-    background: #2d1f00; border: 1px solid #854d0e;
+    border: 1px solid #facc15;
     border-left: 3px solid #facc15; border-radius: 6px;
     padding: 0.6rem 1rem; font-size: 0.82rem;
-    color: #fef08a; margin-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.9;
 }
-.badge-E {
-    background: #14532d; color: #86efac;
-    padding: 2px 8px; border-radius: 4px;
-    font-size: 0.75rem; font-weight: 600;
-}
-.badge-D {
-    background: #422006; color: #fdba74;
-    padding: 2px 8px; border-radius: 4px;
-    font-size: 0.75rem; font-weight: 600;
-}
+.badge-E { background:#14532d; color:#86efac; padding:2px 7px; border-radius:4px; font-size:0.75rem; font-weight:600; }
+.badge-D { background:#78350f; color:#fed7aa; padding:2px 7px; border-radius:4px; font-size:0.75rem; font-weight:600; }
 .badge-single {
     background: #1e3a5f; color: #93c5fd;
     padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;
