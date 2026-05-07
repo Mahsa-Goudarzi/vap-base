@@ -144,8 +144,8 @@ BASE = {
     "E_empty":[0.3,0.2, 0.3,0.3, 0.3, 0.3],
     "E_full": [0.3,0.4, 0.3,0.3, 0.4, 0.3],
     "op_cost": [
-        [0.8, 0.8, 0.7, 9999, 9999, 9999],
-        [9999,9999,9999,0.7,  0.7,  0.8 ],
+        [0.8, 0.8, 0.7, 1000, 1000, 1000],
+        [1000,1000,1000,0.7,  0.7,  0.8 ],
     ],
     "d_origin": [
         [0,   0,   0,   50,  50,  50 ],
@@ -572,7 +572,7 @@ with tab1:
         st.markdown('<p class="section-label">Operating Cost  op_cost (€/km)</p>',
                     unsafe_allow_html=True)
         st.markdown('<div class="info-box">Row = Carrier, Column = Vehicle. '
-                    'Use <strong>9999</strong> for vehicles not owned by that carrier.</div>',
+                    'Use <strong>1000</strong> for vehicles not owned by that carrier.</div>',
                     unsafe_allow_html=True)
 
         op_default = []
@@ -580,7 +580,7 @@ with tab1:
             row = [c_labels[i]]
             for j, v in enumerate(all_vehicles):
                 try: row.append(float(BASE["op_cost"][i][j]))
-                except: row.append(0.7 if v in vehicles_of_carrier[r] else 9999.0)
+                except: row.append(0.7 if v in vehicles_of_carrier[r] else 1000.0)
             op_default.append(row)
         op_df = st.data_editor(
             pd.DataFrame(op_default, columns=["Carrier ↓ / Vehicle →"] + v_labels),
