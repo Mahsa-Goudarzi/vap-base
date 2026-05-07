@@ -71,6 +71,17 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     background: #3b0764; color: #d8b4fe;
     padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;
 }
+
+/* assignment html table */
+.asgn-table { width:100%; border-collapse:collapse; font-size:0.84rem; }
+.asgn-table th {
+    padding: 8px 12px; text-align:left;
+    font-size:0.68rem; font-weight:600;
+    letter-spacing:0.1em; text-transform:uppercase;
+    color:#0ea5e9; border-bottom:2px solid #0ea5e9;
+}
+.asgn-table td { padding: 7px 12px; border-bottom: 1px solid rgba(128,128,128,0.15); }
+
 hr { border-color: #2a2f3e !important; }
 </style>
 """, unsafe_allow_html=True)
@@ -738,18 +749,17 @@ with tab3:
                 )
 
             table_html = f"""
-<table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+<table class="asgn-table">
   <thead>
-    <tr style="border-bottom:1px solid #2a2f3e;color:#7dd3fc;font-size:0.7rem;
-               text-transform:uppercase;letter-spacing:0.1em;">
-      <th style="padding:8px 12px;text-align:left">Type</th>
-      <th style="padding:8px 12px;text-align:left">Trip(s)</th>
-      <th style="padding:8px 12px;text-align:left">Carrier</th>
-      <th style="padding:8px 12px;text-align:left">Vehicle</th>
+    <tr>
+      <th>Type</th>
+      <th>Trip(s)</th>
+      <th>Carrier</th>
+      <th>Vehicle</th>
     </tr>
   </thead>
-  <tbody style="color:#e8e8e8;">
-    {"".join(f'<tr style="border-bottom:1px solid #1e2433">{r[4:-5]}</tr>' for r in html_rows)}
+  <tbody>
+    {"".join(f'<tr>{r[4:-5]}</tr>' for r in html_rows)}
   </tbody>
 </table>
 """
