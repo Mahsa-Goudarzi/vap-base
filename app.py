@@ -578,12 +578,9 @@ with tab1:
         op_default = []
         for i, r in enumerate(carriers):
             row = [c_labels[i]]
-            for v in all_vehicles:
-                if v in vehicles_of_carrier[r]:
-                    try:    row.append(float(BASE["op_cost"][i][v - vehicles_of_carrier[r][0]]))
-                    except: row.append(0.7)
-                else:
-                    row.append(9999.0)
+            for j, v in enumerate(all_vehicles):
+                try: row.append(float(BASE["op_cost"][i][j]))
+                except: row.append(0.7 if v in vehicles_of_carrier[r] else 9999.0)
             op_default.append(row)
         op_df = st.data_editor(
             pd.DataFrame(op_default, columns=["Carrier ↓ / Vehicle →"] + v_labels),
