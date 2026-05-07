@@ -3,7 +3,7 @@ import pulp
 import pandas as pd
 
 st.set_page_config(
-    page_title="VAP Optimizer — Base Model",
+    page_title="VAP Optimizer - Base Model",
     page_icon="🚛",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -437,7 +437,7 @@ def solve(params):
 
 with st.sidebar:
     st.markdown("# 🚛 VAP Optimizer")
-    st.markdown("*Cooperative Trip Planning — Base Model*")
+    st.markdown("*Cooperative Trip Planning - Base Model*")
 
     if st.button("↺  Reset to Base Scenario", use_container_width=True):
         for k, v in BASE.items():
@@ -600,14 +600,14 @@ with tab1:
                     unsafe_allow_html=True)
         c1, c2 = st.columns(2)
         with c1:
-            st.caption("E_empty — vehicle empty")
+            st.caption("E_empty: vehicle empty")
             ee_df = st.data_editor(
                 df_1row(BASE["E_empty"], v_labels),
                 use_container_width=True, hide_index=True,
                 key=f"ee_{n_v}",
             )
         with c2:
-            st.caption("E_full — vehicle fully loaded")
+            st.caption("E_full: vehicle fully loaded")
             ef_df = st.data_editor(
                 df_1row(BASE["E_full"], v_labels),
                 use_container_width=True, hide_index=True,
@@ -624,7 +624,7 @@ with tab2:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown('<p class="section-label">d — Trip Distance (km)</p>',
+        st.markdown('<p class="section-label">d: Trip Distance (km)</p>',
                     unsafe_allow_html=True)
         d_df = st.data_editor(
             df_1row(BASE["d"], t_labels),
@@ -632,7 +632,7 @@ with tab2:
             key=f"d_{n_t}",
         )
 
-        st.markdown('<p class="section-label">d_origin — Depot → Trip Origin (km)</p>',
+        st.markdown('<p class="section-label">d_origin: Depot → Trip Origin (km)</p>',
                     unsafe_allow_html=True)
         st.caption("Row = Trip, Column = Vehicle")
         dor_df = st.data_editor(
@@ -641,7 +641,7 @@ with tab2:
             key=f"dor_{n_t}_{n_v}",
         )
 
-        st.markdown('<p class="section-label">d_dest — Trip Destination → Depot (km)</p>',
+        st.markdown('<p class="section-label">d_dest: Trip Destination → Depot (km)</p>',
                     unsafe_allow_html=True)
         st.caption("Row = Trip, Column = Vehicle")
         dd_df = st.data_editor(
@@ -651,7 +651,7 @@ with tab2:
         )
 
     with col2:
-        st.markdown('<p class="section-label">ε — Repositioning Distance (km)</p>',
+        st.markdown('<p class="section-label">ε: Repositioning Distance (km)</p>',
                     unsafe_allow_html=True)
         st.caption("Row = Trip n, Column = Trip k. Diagonal = 0.")
         eps_df = st.data_editor(
@@ -660,7 +660,7 @@ with tab2:
             key=f"eps_{n_t}",
         )
 
-        st.markdown('<p class="section-label">O — Combinability (0 / 1)</p>',
+        st.markdown('<p class="section-label">O: Combinability (0 / 1)</p>',
                     unsafe_allow_html=True)
         st.caption("1 = may be combined. Diagonal must be 0.")
         O_df = st.data_editor(
@@ -677,7 +677,7 @@ with tab3:
                           use_container_width=False)
 
     if solve_btn and valid:
-        with st.spinner("Solving — please wait..."):
+        with st.spinner("Solving... please wait..."):
             try:
                 # parse inputs
                 z = {(r,n): (1 if n in trips_of_carrier[r] else 0)
