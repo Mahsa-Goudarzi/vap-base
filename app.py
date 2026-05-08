@@ -401,12 +401,6 @@ with st.sidebar:
     st.markdown("# 🚛 VAP Optimizer")
     st.markdown("*Cooperative Trip Planning - Base Model*")
 
-    if st.button("↺  Reset to Base Scenario", use_container_width=True):
-        for k, v in BASE.items():
-            st.session_state[k] = v
-        st.session_state.solved = False
-        st.rerun()
-
     st.markdown("---")
     st.markdown("### Dimensions")
 
