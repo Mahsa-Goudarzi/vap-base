@@ -464,7 +464,7 @@ if not valid:
 else:
     st.markdown(
         f'<div class="info-box">📐 {n_c} carriers · {n_t} trips · {n_v} vehicles '
-        f'— all tables adapt automatically when you change dimensions.</div>',
+        f' · all tables adapt automatically when you change dimensions.</div>',
         unsafe_allow_html=True)
 
 tab1, tab2, tab3 = st.tabs([
